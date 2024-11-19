@@ -1,0 +1,266 @@
+:root {
+  font-family: "Copperplate", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* off-screen-menu */
+.off-screen-menu {
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 127px;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.5rem 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-color: #cd9d2b;
+      scale: 1 0;
+      z-index: -1;
+      transition: 0.45s;
+      border-radius: 10px;
+    }
+
+    &:hover {
+      color: white;
+    }
+    &:hover::after {
+      scale: 1 1;
+    }
+  }
+}
+.off-screen-menu.active {
+  right: -200px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* logo */
+.logo {
+  width: 106px;
+  height: 145px;
+  background-color: #cd9d2b;
+  background-image: url(volume1/volume1-logo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 63px;
+  left: 78px;
+}
+
+/* ham menu */
+.ham-menu {
+  height: 50px;
+  width: 40px;
+  margin-left: auto;
+  position: absolute;
+  right: 78px;
+  top: 63px;
+}
+.ham-menu span {
+  height: 4px;
+  width: 100%;
+  background-color: #cd9d2b;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+.ham-menu.active span {
+  background-color: #cd9d2b;
+}
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.obelisk {
+  width: 63px; /* Set the base width */
+  height: 570px; /* Set the height of the main rectangle */
+  background-image: url(volume1/side.jpg); /* Background color */
+  clip-path: polygon(
+    50% 0%,
+    100% 10%,
+    100% 90%,
+    50% 100%,
+    0% 90%,
+    0% 10%
+  ); /* Create pointed top and tapered edges */
+  position: absolute;
+  top: 265px;
+  left: 100px;
+}
+.obelisk2 {
+  width: 63px; /* Set the base width */
+  height: 570px; /* Set the height of the main rectangle */
+  background-image: url(volume1/side.jpg); /* Background color */
+  clip-path: polygon(
+    50% 0%,
+    100% 10%,
+    100% 90%,
+    50% 100%,
+    0% 90%,
+    0% 10%
+  ); /* Create pointed top and tapered edges */
+  position: absolute;
+  top: 60px;
+  left: 885px;
+}
+
+.book-container {
+  width: 462px;
+  height: 647px;
+  position: relative;
+  right: 350px;
+  margin: 50px auto;
+  transform-style: preserve-3d;
+}
+
+.book {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  cursor: pointer;
+}
+
+.book-cover,
+.book-back,
+.book-spine {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  background: #1a4ba5;
+  color: white;
+  transform: rotateY(0deg) translateZ(25px);
+  background: url(posters/poster2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.text-container {
+  width: 462px;
+  height: 647px;
+  position: relative;
+  left: 510px;
+  margin: 50px auto;
+  border-left: 2px solid #cd9d2b;
+  padding-left: 50px;
+
+  .text p {
+    font-size: 1.2rem;
+    color: #cd9d2b;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 171px;
+
+  p {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    top: -80px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-color: #cd9d2b;
+      scale: 1 0;
+      z-index: -1;
+      transition: 0.45s;
+      border-radius: 10px;
+    }
+
+    &:hover {
+      color: white;
+    }
+    &:hover::after {
+      scale: 1 1;
+    }
+  }
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+}

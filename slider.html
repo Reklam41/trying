@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="slider.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/heading-now-trial"
+      rel="stylesheet" />
+    <title>Carousel</title>
+  </head>
+  <body>
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="background-video">
+      <!--
+        <source
+        src="books/vecteezy_egyptian-wall-animated_4729558.mov"
+        type="video/mp4" />
+        -->
+      <source
+        src="books/vecteezy_egyptian-wall-animated_4729558.mp4"
+        type="video/mp4" />
+      
+    </video>
+
+    <header>
+      <div class="off-screen-menu">
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <div class="text">
+      <div class="container">
+        <div class="title-wrapper">
+          <div class="icon-title-row">
+            <svg
+              class="pyramid-icon slide-up"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M2 22 12 2l10 20Z" />
+            </svg>
+            <div class="text-wrapper">
+              <span class="title-text slide-up delay-1">ENCYCLOPEDIA</span>
+            </div>
+          </div>
+
+          <div class="text-wrapper">
+            <span class="title-text slide-up delay-2">OF</span>
+          </div>
+
+          <div class="text-wrapper">
+            <span class="main-title slide-up delay-3">ANCIENT EGYPT</span>
+          </div>
+
+          <div class="glow-effect"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <section class="slideshow-container">
+        <a href="volume1.html" class="active-slide">
+          <div class="slide1"></div>
+        </a>
+        <a href="volume2.html" class="active-slide">
+          <div class="slide2"></div>
+        </a>
+        <a href="volume3.html" class="active-slide">
+          <div class="slide3"></div>
+        </a>
+        <a href="poster.html" class="active-slide">
+          <div class="slide4"></div>
+        </a>
+        <a href="poster2.html" class="active-slide">
+          <div class="slide5"></div>
+        <a href="poster3.html" class="active-slide">
+          <div class="slide6"></div>
+        </a>
+        <!-- Duplicate slides for smooth looping -->
+        <a href="volume1.html" class="active-slide">
+          <div class="slide1"></div>
+        </a>
+        <a href="volume2.html" class="active-slide">
+          <div class="slide2"></div>
+        </a>
+        <a href="volume3.html" class="active-slide">
+          <div class="slide3"></div>
+        </a>
+        <a href="poster.html" class="active-slide">
+          <div class="slide4"></div>
+        </a>
+        <a href="poster2.html" class="active-slide">
+          <div class="slide5"></div>
+        <a href="poster3.html" class="active-slide">
+          <div class="slide6"></div>
+        </a>
+      </section>
+    </div>
+    <script type="module" src="slider.js"></script>
+  </body>
+</html>
